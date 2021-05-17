@@ -3,33 +3,33 @@ import numpy as np
 
 class Tools(object):
 
-    def get_info1(self,pos,no_interference):  # 看看不用info的内部存储可以么
-        dim = 0
-        num = {}
-        cars_info = [[0 for m in range(3)] for p in range(len(pos))]    #  注意以后再用的时候能不能行
-        for i in range(len(pos)):
-            dim += 1
-            if i != len(pos) - 1:
-                if pos[i + 1] - pos[i] > no_interference:
-                    if dim not in num:
-                        num[dim] = 0  # 从0开始计算组数
-                    else:
-                        num[dim] += 1
-                    for p in range(i + 1 - dim, i + 1):
-                        cars_info[p][0] = dim
-                        cars_info[p][1] = num[dim]
-                        cars_info[p][2] = p - i - 1 + dim
-                    dim = 0
-            else:
-                if dim not in num:
-                    num[dim] = 0  # 从0开始计算组数
-                else:
-                    num[dim] += 1
-                for p in range(i + 1 - dim, i + 1):
-                    cars_info[p][0] = dim
-                    cars_info[p][1] = num[dim]
-                    cars_info[p][2] = p - i - 1 + dim
-        return cars_info
+    # def get_info1(self,pos,no_interference):  # 看看不用info的内部存储可以么
+    #     dim = 0
+    #     num = {}
+    #     cars_info = [[0 for m in range(3)] for p in range(len(pos))]    #  注意以后再用的时候能不能行
+    #     for i in range(len(pos)):
+    #         dim += 1
+    #         if i != len(pos) - 1:
+    #             if pos[i + 1] - pos[i] > no_interference:
+    #                 if dim not in num:
+    #                     num[dim] = 0  # 从0开始计算组数
+    #                 else:
+    #                     num[dim] += 1
+    #                 for p in range(i + 1 - dim, i + 1):
+    #                     cars_info[p][0] = dim
+    #                     cars_info[p][1] = num[dim]
+    #                     cars_info[p][2] = p - i - 1 + dim
+    #                 dim = 0
+    #         else:
+    #             if dim not in num:
+    #                 num[dim] = 0  # 从0开始计算组数
+    #             else:
+    #                 num[dim] += 1
+    #             for p in range(i + 1 - dim, i + 1):
+    #                 cars_info[p][0] = dim
+    #                 cars_info[p][1] = num[dim]
+    #                 cars_info[p][2] = p - i - 1 + dim
+    #     return cars_info
 
     def get_info(self,pos,no_interference):  # 看看不用info的内部存储可以么
         dim = 0

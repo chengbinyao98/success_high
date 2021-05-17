@@ -16,19 +16,21 @@ class Env(object):
         self.road_length = 200  # 道路长度
         self.straight = 100  # 基站和道路的直线距离
 
-        self.no_interference = 30  # 车辆没有干扰的距离
-
         self.v_min = 8  # 车辆的最小速度
         self.v_max = 16  # 车辆的最大速度
         self.accelerate = 16  # 车辆的加速度
 
-        self.min_dis = 22  # 车辆之间的最小反应距离
+        # self.min_dis = 22  # 车辆之间的最小反应距离
+        # 22 40
 
         self.per_section = 5  # 每几米划分成一个路段
         self.road_range = 40  # 动作可以选择的范围
 
         self.l_min = 22  # 车辆间距服从均匀分布
-        self.l_max = 40
+        self.l_max = 28
+        self.min_dis = self.l_min
+        self.no_interference = 28  # 车辆没有干扰的距离
+
 
         # 天线
         self.ann_num = 16  # 天线数目

@@ -17,7 +17,7 @@ class Env2(object):
         self.v_min = 8  # 车辆的最小速度
         self.v_max = 16  # 车辆的最大速度
         self.accelerate = 16  # 车辆的加速度
-
+        #22 28
         self.min_dis = 22  # 车辆之间的最小反应距离
         self.max_dis = 28
 
